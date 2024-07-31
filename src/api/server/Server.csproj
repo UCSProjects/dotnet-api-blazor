@@ -21,6 +21,8 @@
     <ProjectReference Include="..\migrations\MSSQL\MSSQL.csproj" />
     <ProjectReference Include="..\migrations\PostgreSQL\PostgreSQL.csproj" />
     <ProjectReference Include="..\modules\Catalog\Catalog.Infrastructure\Catalog.Infrastructure.csproj" />
+    <ProjectReference Include="..\modules\Common\Common.Application\Common.Application.csproj" />
+    <ProjectReference Include="..\modules\Common\Common.Infrastructure\Common.Infrastructure.csproj" />
     <ProjectReference Include="..\modules\Todo\Todo.csproj" />
   </ItemGroup>
   <ItemGroup>

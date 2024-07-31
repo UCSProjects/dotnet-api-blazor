@@ -2,15 +2,15 @@
 
 $currentDirectory = Get-Location
 $rootDirectory = git rev-parse --show-toplevel
-$hostDirectory = Join-Path -Path $rootDirectory -ChildPath 'src/Host'
-$infrastructurePrj = Join-Path -Path $rootDirectory -ChildPath 'src/Client.Infrastructure/Client.Infrastructure.csproj'
+$serverDirectory = Join-Path -Path $rootDirectory -ChildPath 'src/api/server'
+$infrastructurePrj = Join-Path -Path $rootDirectory -ChildPath 'src/apps/blazor/infrastructure/Infrastructure.csproj'
 
-Write-Host "Make sure you have run the FSH.WebApi project. `n"
+Write-Host "Make sure you have run the Server project. `n"
 Write-Host "Press any key to continue... `n"
 $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
 
-Set-Location -Path $hostDirectory
-Write-Host "Host Directory is $hostDirectory `n"
+Set-Location -Path $serverDirectory
+Write-Host "Server Directory is $serverDirectory `n"
 
 <# Run command #>
 dotnet build -t:NSwag $infrastructurePrj

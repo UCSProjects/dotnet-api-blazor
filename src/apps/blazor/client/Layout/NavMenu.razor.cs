@@ -18,6 +18,7 @@ public partial class NavMenu
     private bool _canViewRoles;
     private bool _canViewUsers;
     private bool _canViewProducts;
+    private bool _canViewGeneralSettings;
     private bool _canViewTodos;
     private bool _canViewTenants;
     private bool CanViewAdministrationGroup => _canViewUsers || _canViewRoles || _canViewTenants;
@@ -30,6 +31,7 @@ public partial class NavMenu
         _canViewRoles = await AuthService.HasPermissionAsync(user, FshAction.View, FshResource.Roles);
         _canViewUsers = await AuthService.HasPermissionAsync(user, FshAction.View, FshResource.Users);
         _canViewProducts = await AuthService.HasPermissionAsync(user, FshAction.View, FshResource.Products);
+        _canViewGeneralSettings = await AuthService.HasPermissionAsync(user, FshAction.View, FshResource.GeneralSettings);
         _canViewTodos = await AuthService.HasPermissionAsync(user, FshAction.View, FshResource.Todos);
         _canViewTenants = await AuthService.HasPermissionAsync(user, FshAction.View, FshResource.Tenants);
     }
