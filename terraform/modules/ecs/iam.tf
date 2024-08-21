@@ -1,5 +1,5 @@
 resource "aws_iam_role" "ecs_task_execution_role" {
-  name               = "fsh-ecs-task-execution-role"
+  name               = "${var.service_name}-ecs-ter"
   assume_role_policy = <<EOF
 {
  "Version": "2012-10-17",
@@ -17,7 +17,7 @@ resource "aws_iam_role" "ecs_task_execution_role" {
 EOF
 }
 resource "aws_iam_role" "ecs_task_role" {
-  name               = "fsh-ecs-task-role"
+  name               = "${var.service_name}-ecs-tr"
   assume_role_policy = <<EOF
 {
  "Version": "2012-10-17",

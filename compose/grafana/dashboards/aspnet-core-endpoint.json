@@ -24,8 +24,9 @@
   "description": "ASP.NET Core endpoint metrics from OpenTelemetry",
   "editable": true,
   "fiscalYearStartMonth": 0,
+  "gnetId": 19925,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 10,
   "links": [
     {
       "asDropdown": false,
@@ -45,7 +46,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "prom"
       },
       "fieldConfig": {
         "defaults": {
@@ -164,7 +165,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(http_server_request_duration_seconds_bucket{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[5m])) by (le))",
@@ -175,7 +176,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.75, sum(rate(http_server_request_duration_seconds_bucket{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[5m])) by (le))",
@@ -187,7 +188,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.90, sum(rate(http_server_request_duration_seconds_bucket{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[5m])) by (le))",
@@ -199,7 +200,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(http_server_request_duration_seconds_bucket{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[5m])) by (le))",
@@ -211,7 +212,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.98, sum(rate(http_server_request_duration_seconds_bucket{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[5m])) by (le))",
@@ -223,7 +224,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.99, sum(rate(http_server_request_duration_seconds_bucket{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[5m])) by (le))",
@@ -235,7 +236,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.999, sum(rate(http_server_request_duration_seconds_bucket{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[5m])) by (le))",
@@ -251,7 +252,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "prom"
       },
       "description": "",
       "fieldConfig": {
@@ -391,7 +392,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "sum(rate(http_server_request_duration_seconds_count{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\", http_response_status_code=~\"4..|5..\"}[5m]) or vector(0)) / sum(rate(http_server_request_duration_seconds_count{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[5m]))",
@@ -402,7 +403,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "sum(rate(http_server_request_duration_seconds_count{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\", http_response_status_code=~\"4..\"}[5m]) or vector(0)) / sum(rate(http_server_request_duration_seconds_count{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[5m]))",
@@ -414,7 +415,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "sum(rate(http_server_request_duration_seconds_count{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\", http_response_status_code=~\"5..\"}[5m]) or vector(0)) / sum(rate(http_server_request_duration_seconds_count{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[5m]))",
@@ -430,7 +431,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "prom"
       },
       "description": "",
       "fieldConfig": {
@@ -531,12 +532,12 @@
           }
         ]
       },
-      "pluginVersion": "",
+      "pluginVersion": "11.1.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -577,7 +578,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "prom"
       },
       "fieldConfig": {
         "defaults": {
@@ -614,6 +615,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "max"
@@ -621,14 +623,16 @@
           "fields": "",
           "values": false
         },
-        "textMode": "value_and_name"
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
       },
-      "pluginVersion": "",
+      "pluginVersion": "11.1.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "sum by (http_response_status_code) (\r\n    max_over_time(http_server_request_duration_seconds_count{http_route=\"$route\", http_request_method=\"$method\"}[$__rate_interval])\r\n  )",
@@ -643,7 +647,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "prom"
       },
       "description": "",
       "fieldConfig": {
@@ -681,6 +685,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "max"
@@ -688,14 +693,16 @@
           "fields": "",
           "values": false
         },
-        "textMode": "value_and_name"
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
       },
-      "pluginVersion": "",
+      "pluginVersion": "11.1.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "sum by (url_scheme) (\r\n    max_over_time(http_server_request_duration_seconds_count{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[$__rate_interval])\r\n  )",
@@ -710,7 +717,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "prom"
       },
       "description": "",
       "fieldConfig": {
@@ -748,6 +755,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "max"
@@ -755,14 +763,16 @@
           "fields": "",
           "values": false
         },
-        "textMode": "value_and_name"
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
       },
-      "pluginVersion": "",
+      "pluginVersion": "11.1.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "prom"
           },
           "editorMode": "code",
           "expr": "sum by (method_route) (\r\n    label_replace(max_over_time(http_server_request_duration_seconds_count{job=\"$job\", instance=\"$instance\", http_route=\"$route\", http_request_method=\"$method\"}[$__rate_interval]), \"method_route\", \"http/$1\", \"network_protocol_version\", \"(.*)\")\r\n  )",
@@ -775,9 +785,9 @@
       "type": "stat"
     }
   ],
-  "refresh": "10s",
+  "refresh": "",
   "revision": 1,
-  "schemaVersion": 38,
+  "schemaVersion": 39,
   "tags": [
     "dotnet",
     "prometheus",
@@ -788,12 +798,12 @@
       {
         "current": {
           "selected": false,
-          "text": "metricsapp",
-          "value": "metricsapp"
+          "text": "fullstackhero.api",
+          "value": "fullstackhero.api"
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "PBFA97CFB590B2093"
+          "uid": "prom"
         },
         "definition": "label_values(http_server_active_requests,job)",
         "hide": 0,
@@ -815,12 +825,12 @@
       {
         "current": {
           "selected": false,
-          "text": "host.docker.internal:5048",
-          "value": "host.docker.internal:5048"
+          "text": "host.docker.internal:5000",
+          "value": "host.docker.internal:5000"
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "PBFA97CFB590B2093"
+          "uid": "prom"
         },
         "definition": "label_values(http_server_active_requests{job=~\"$job\"},instance)",
         "hide": 0,
@@ -842,12 +852,12 @@
       {
         "current": {
           "selected": false,
-          "text": "/metrics",
-          "value": "/metrics"
+          "text": "api/roles/",
+          "value": "api/roles/"
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "PBFA97CFB590B2093"
+          "uid": "prom"
         },
         "definition": "label_values(http_server_request_duration_seconds_count,http_route)",
         "description": "Route",
@@ -875,7 +885,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "PBFA97CFB590B2093"
+          "uid": "prom"
         },
         "definition": "label_values(http_server_request_duration_seconds_count{http_route=~\"$route\"},http_request_method)",
         "hide": 0,
@@ -897,7 +907,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
@@ -917,7 +927,7 @@
   },
   "timezone": "",
   "title": "ASP.NET Core Endpoint",
-  "uid": "NagEsjE4z",
-  "version": 1,
+  "uid": "NagEsjE4j",
+  "version": 2,
   "weekStart": ""
 }
