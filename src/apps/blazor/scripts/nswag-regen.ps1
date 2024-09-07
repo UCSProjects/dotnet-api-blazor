@@ -2,10 +2,10 @@
 
 $currentDirectory = Get-Location
 $rootDirectory = git rev-parse --show-toplevel
-$serverDirectory = Join-Path -Path $rootDirectory -ChildPath 'src/api/server'
+$hostDirectory = Join-Path -Path $rootDirectory -ChildPath 'src/apps/blazor/client'
 $infrastructurePrj = Join-Path -Path $rootDirectory -ChildPath 'src/apps/blazor/infrastructure/Infrastructure.csproj'
 
-Write-Host "Make sure you have run the Server project. `n"
+Write-Host "Make sure you have run the WebAPI project. `n"
 Write-Host "Press any key to continue... `n"
 $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
 
